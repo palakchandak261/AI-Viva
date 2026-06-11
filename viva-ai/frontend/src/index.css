@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-slate-100 font-sans antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-dark-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-white/20 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-white/30; }
+}
+
+@layer components {
+  /* ── Buttons ─────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+           bg-brand-gradient text-white shadow-glow-sm
+           hover:shadow-glow hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-dark-900
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none
+           transition-all duration-200;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+           bg-white/10 text-slate-200 border border-white/10
+           hover:bg-white/20 hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-dark-900
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
+           transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm
+           text-slate-400 hover:text-slate-200 hover:bg-white/5
+           transition-all duration-200;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+           bg-danger-gradient text-white
+           hover:-translate-y-0.5 hover:shadow-lg
+           transition-all duration-200;
+  }
+
+  /* ── Cards ───────────────────────────────────── */
+  .card {
+    @apply bg-dark-800/60 backdrop-blur-sm rounded-2xl border border-white/10
+           shadow-card p-6;
+  }
+  .card-hover {
+    @apply card hover:border-brand-500/30 hover:shadow-card-hover hover:-translate-y-1
+           transition-all duration-300 cursor-pointer;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md rounded-2xl border border-white/10
+           shadow-card p-6;
+  }
+
+  /* ── Inputs ──────────────────────────────────── */
+  .input {
+    @apply block w-full rounded-xl bg-dark-800/80 border border-white/10
+           px-4 py-3 text-sm text-slate-100
+           placeholder:text-slate-500
+           focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500/50
+           transition-all duration-200;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-300 mb-2;
+  }
+
+  /* ── Badges ──────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  /* ── Glow / gradient text ────────────────────── */
+  .glow-brand { @apply shadow-glow; }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-brand-gradient;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Progress bar ────────────────────────────── */
+  .progress-bar {
+    @apply w-full bg-white/10 rounded-full overflow-hidden;
+  }
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  }
+
+  /* ── Stat card ───────────────────────────────── */
+  .stat-card {
+    @apply glass-card flex items-center gap-4;
+  }
+  .stat-icon {
+    @apply p-3 rounded-xl;
+  }
+
+  /* ── Section heading ─────────────────────────── */
+  .section-title {
+    @apply text-lg font-bold text-white mb-4;
+  }
+
+  /* ── Divider ─────────────────────────────────── */
+  .divider {
+    @apply border-t border-white/10 my-6;
+  }
+}
